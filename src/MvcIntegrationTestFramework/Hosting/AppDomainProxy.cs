@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web;
+using System.Web.Hosting;
 using FakeHost.Browsing;
 
 namespace FakeHost.Hosting {
@@ -26,7 +27,7 @@ namespace FakeHost.Hosting {
 
     public void Dispose()
     {
-      HttpRuntime.Close();
+      HostingEnvironment.InitiateShutdown();
     }
   }
 }
