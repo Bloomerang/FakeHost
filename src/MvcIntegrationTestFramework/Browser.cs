@@ -232,7 +232,11 @@ namespace FakeHost {
 		}
 
         public void Dispose() {
-            _appHost.Dispose();
+            if (_appHost != null)
+            {
+                _appHost.Dispose();
+                _appHost = null;
+            }
         }
 	}
 }
